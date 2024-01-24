@@ -1,2 +1,2 @@
-def get_val(collections, key, default='git'):
+def get_val(collection, key, default='git'):
     pass
