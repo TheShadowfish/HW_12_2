@@ -17,8 +17,5 @@ def test_get(array_fixture):
 ])
 def test_slice(array, start, end, expected):
     assert arrs.my_slice(array, start, end) == expected
-    assert arrs.my_slice(array, start, end) == expected
-    assert arrs.my_slice(array, start, end) == expected
-    assert arrs.my_slice(array, start, end) == expected
 
 
