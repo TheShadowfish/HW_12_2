@@ -2,14 +2,11 @@ from utils import arrs
 import pytest
 
 
-@pytest.mark.parametrize('array, index, expected', [
-    ([1, 2, 3], 1, 2),
-    ([], 0, "test"),
-    ([1, 2, 3, 4], -1, 'test'),
-    ([1, 2, 3, 4], 4, 'test')
-])
-def test_get(array, index, expected):
-    assert arrs.get(array, index, "test") == expected
+def test_get(array_fixture):
+    assert arrs.get(array_fixture, 1, "test") == 2
+    assert arrs.get([], 0, "test") == "test"
+    assert arrs.get(array_fixture, -1, "test") == "test"
+    assert arrs.get(array_fixture, 4, "test") == 'test'
 
 
 @pytest.mark.parametrize('array, start, end, expected', [
@@ -19,6 +16,9 @@ def test_get(array, index, expected):
     ([1, 2, 3, 4], None, 2, [1, 2])
 ])
 def test_slice(array, start, end, expected):
+    assert arrs.my_slice(array, start, end) == expected
+    assert arrs.my_slice(array, start, end) == expected
+    assert arrs.my_slice(array, start, end) == expected
     assert arrs.my_slice(array, start, end) == expected
 
 
